@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    private int health;
+
+    [SerializeField] private int health;
     public int Health
     {
         get
@@ -17,8 +18,8 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    protected Animator anim;
-    protected Rigidbody2D rb;
+    public Animator anim;
+    public Rigidbody2D rb;
 
     public bool IsDead()
     {
