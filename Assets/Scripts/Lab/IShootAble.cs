@@ -9,5 +9,7 @@ public interface IShootAble
     Transform BulletSpawnPoint { get; set; }
     float BulletSpawnTime { get; set; }
     float BulletTimer { get; set; }
-    public void Shoot();
+    
+    void Shoot();
+
 }
