@@ -1466,14 +1466,19 @@ MonoBehaviour:
   rb: {fileID: 1036407530}
   attackRange: 6
   player: {fileID: 684113343}
-  bullet: {fileID: 115806, guid: 40466c5ac40024bbca1e4b144cdf43c2, type: 3}
-  bulletSpawnPoint: {fileID: 1901808447}
-  bulletSpawnTime: 1.5
-  bulletTimer: 0
+  <Bullet>k__BackingField: {fileID: 1042975065}
+  <BulletSpawnPoint>k__BackingField: {fileID: 1901808447}
+  <BulletSpawnTime>k__BackingField: 5
+  <BulletTimer>k__BackingField: 0
 --- !u!4 &1042100267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473078, guid: 988fc297a71d24254ba0a364fda65476, type: 3}
   m_PrefabInstance: {fileID: 49013220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1042975065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 115806, guid: 40466c5ac40024bbca1e4b144cdf43c2, type: 3}
+  m_PrefabInstance: {fileID: 1634143307}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1044745634 stripped
 Transform:
@@ -2700,6 +2705,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165882, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 174212, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 485146, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2738,7 +2751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11440140, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
       propertyPath: whatIsGround.m_Bits
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
