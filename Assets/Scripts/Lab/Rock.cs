@@ -6,19 +6,25 @@ public class Rock : Weapon
 {
     public void Start()
     {
-        damage = 40;
+        rb2d = GetComponent<Rigidbody2D>();
+        force = new Vector2(GetShootDirection() * 10, 100);
+        damage = 20;
         Move();
     }
 
-    private Rigidbody2D rb2D;
-    private Vector2 force;
+    Rigidbody2D rb2d;
+    Vector2 force;
 
     public override void Move()
     {
-        Debug.Log("Rock เคลื่อนที่ด้วย RigidBody: force");
+        rb2d.AddForce(force);
+        //Debug.Log("Rock เคลื่อนที่ด้วย RigidBody: force");
     }
-    public override void OnHitWith(Character idk)
+    public override void OnHitWith(Character character)
     {
-
+        if (character is Player)
+        {
+            character.TakeDamage(this.Damage);
+        }
     }
 }

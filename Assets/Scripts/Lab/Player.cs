@@ -14,7 +14,9 @@ public class Player : Character , IShootAble
         BulletTimer -= Time.deltaTime;
         if (Input.GetButtonDown("Fire1") && BulletTimer <= 0)
         {
-            Shoot();
+            GameObject obj = Instantiate(Bullet, BulletSpawnPoint.position, Quaternion.identity);
+            Banana banana = obj.GetComponent<Banana>();
+            banana.Init(10, this);
         }
     }
     public void Shoot()
@@ -25,5 +27,20 @@ public class Player : Character , IShootAble
 
             BulletTimer = BulletSpawnTime;
         }
+    }
+
+    private void InCollisionEnter2D(Collision2D collistion)
+    {
+        Enemy enemy = collistion.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            OnHitWith(enemy);
+        }
+    }
+
+    void OnHitWith(Enemy enemy)
+    {
+        TakeDamage(enemy.DamageHit);
+
     }
 }
