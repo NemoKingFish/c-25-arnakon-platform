@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Banana : Weapon
 {
-    [SerializeField] private float speed;
+    [SerializeField] float speed;
     public void Start()
     {
-        damage = 10;
-        speed = 4f * GetShootDirection();
+        Damage = 10;
+        speed = 4.0f * GetShootDirection();
         Move();
     }
     public override void Move()
@@ -18,7 +18,7 @@ public class Banana : Weapon
         float newY = transform.position.y;
         Vector2 newPosition = new Vector2(newX, newY);
         transform.position = newPosition;
-        Debug.Log("Banana เคลื่อนที่ด้วย Tranform ด้วยความเร็วคงที่");
+        //Debug.Log("Banana เคลื่อนที่ด้วย Tranform ด้วยความเร็วคงที่");
     }
 
     private void FixedUpdate()

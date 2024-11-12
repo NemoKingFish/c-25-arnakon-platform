@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
 
-    [SerializeField] private int health;
+    [SerializeField] int health;
     public int Health
     {
         get
@@ -21,6 +21,13 @@ public abstract class Character : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
 
+    public virtual void Init(int newHealth)
+    {
+        health = newHealth;
+        //get components for prefabs
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
     public bool IsDead()
     {
         return Health <= 0;
