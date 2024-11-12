@@ -20,6 +20,11 @@ public class Banana : Weapon
         transform.position = newPosition;
         Debug.Log("Banana เคลื่อนที่ด้วย Tranform ด้วยความเร็วคงที่");
     }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
     public override void OnHitWith(Character character)
     {
         if (character is Enemy)
