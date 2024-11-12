@@ -1477,7 +1477,7 @@ MonoBehaviour:
   player: {fileID: 684113343}
   <Bullet>k__BackingField: {fileID: 1042975065}
   <BulletSpawnPoint>k__BackingField: {fileID: 1901808447}
-  <BulletSpawnTime>k__BackingField: 5
+  <BulletSpawnTime>k__BackingField: 3
   <BulletTimer>k__BackingField: 0
 --- !u!4 &1042100267 stripped
 Transform:
