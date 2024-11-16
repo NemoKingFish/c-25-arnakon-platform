@@ -8,7 +8,7 @@ public class Ant : Enemy
     [SerializeField] private Vector2 velocity;
     [SerializeField] private Transform[] movePoint;
 
-    private void Start()
+    void Start()
     {
         Init(20);
         InitHealthBar(20);

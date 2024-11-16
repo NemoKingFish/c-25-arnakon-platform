@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : Character , IShootAble
 {
-    [SerializeField]
+    [field: SerializeField]
     Transform bulletSpawnPoint;
     public Transform BulletSpawnPoint { get { return bulletSpawnPoint; } set { bulletSpawnPoint = value; } }
 
-    [SerializeField]
+    [field: SerializeField]
     GameObject bullet;
     public GameObject Bullet { get { return bullet; } set { bullet = value; } }
 
@@ -25,7 +25,7 @@ public class Player : Character , IShootAble
             BulletTimer = 0;
         }
     }
-    void Strat()
+    void Start()
     {
         InitHealthBar(100);
         Init(100);
@@ -43,7 +43,7 @@ public class Player : Character , IShootAble
         BulletTimer += Time.fixedDeltaTime;
     }
     
-    private void InCollisionEnter2D(Collision2D collistion)
+    private void OnCollisionEnter2D(Collision2D collistion)
     {
         Enemy enemy = collistion.gameObject.GetComponent<Enemy>();
         if (enemy != null)
