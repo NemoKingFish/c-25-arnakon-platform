@@ -10,10 +10,10 @@ public class Ant : Enemy
 
     private void Start()
     {
-        //Init(10);
-        Debug.Log("Ant Health: " + Health);
-
-        Behavior();
+        Init(20);
+        InitHealthBar(20);
+        velocity = new Vector2(-1.0f, 0.0f);
+        DamageHit = 20;
     }
     /*public void Init(int newHealth)
     {

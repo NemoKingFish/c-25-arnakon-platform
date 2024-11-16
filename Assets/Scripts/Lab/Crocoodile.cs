@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -28,8 +28,9 @@ public class Crocoodile : Enemy, IShootAble
     public float BulletSpawnTime { get; set; }
     public float BulletTimer { get; set; }
 
-    void Strat()
+    void Start()
     {
+        InitHealthBar(30);
         Init(30);
         BulletTimer = 0.0f;
         BulletSpawnTime = 3.0f;
@@ -57,7 +58,7 @@ public class Crocoodile : Enemy, IShootAble
         if (BulletTimer >= BulletSpawnTime)
         {
             anim.SetTrigger("Shoot");
-            GameObject obj = Instantiate(bullet, BulletSpawnPoint.position, Quaternion.identity);
+            GameObject obj = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
             Rock rock = obj.gameObject.GetComponent<Rock>();
             rock.Init(20, this);
 

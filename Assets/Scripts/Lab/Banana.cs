@@ -7,14 +7,14 @@ public class Banana : Weapon
     [SerializeField] float speed;
     public void Start()
     {
-        Damage = 10;
+        Init(10, this.shooter);
         speed = 4.0f * GetShootDirection();
         Move();
     }
     public override void Move()
     {
         //s = speed * time
-        float newX = transform.position.x + speed * Time.deltaTime;
+        float newX = transform.position.x + speed * Time.fixedDeltaTime;
         float newY = transform.position.y;
         Vector2 newPosition = new Vector2(newX, newY);
         transform.position = newPosition;

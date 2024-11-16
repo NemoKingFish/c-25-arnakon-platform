@@ -6,9 +6,9 @@ public class Rock : Weapon
 {
     public void Start()
     {
+        Init(20, this.shooter);
         rb2d = GetComponent<Rigidbody2D>();
         force = new Vector2(GetShootDirection() * 10, 100);
-        Damage = 20;
         Move();
     }
 

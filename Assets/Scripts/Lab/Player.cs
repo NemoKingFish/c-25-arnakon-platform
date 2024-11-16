@@ -27,6 +27,7 @@ public class Player : Character , IShootAble
     }
     void Strat()
     {
+        InitHealthBar(100);
         Init(100);
         BulletTimer = 0.0f;
         BulletSpawnTime = 1.0f;
@@ -54,6 +55,5 @@ public class Player : Character , IShootAble
     void OnHitWith(Enemy enemy)
     {
         TakeDamage(enemy.DamageHit);
-
     }
 }
