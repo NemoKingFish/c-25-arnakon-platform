@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
-    [SerializeField] int damageHit;
+    [SerializeField] private int damageHit;
     public int DamageHit
     {
         get
